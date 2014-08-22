@@ -5,16 +5,43 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
   <title>Layer Swipe</title>
   <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="//js.arcgis.com/3.10/"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/main.js"></script>
+
+ 
 
 </head>
 <body>
+  <div id="navBar">
+    <div id="imgCon"><img id="logo" src="css/img/map-logo-57x57.png" alt=""></div>
+    <div id="logoFont">NJMC Historical Imagery</div>
+    <div style="float: right;">
+            <div id="layerSCon">
+              <select name="layerSelect" id="layerSelect" class="form-control">
+                <option value="IMG_2012_C">2012</option>
+                <option value="IMG_2010_C">2010</option>
+                <option value="IMG_2009_C">2009</option>
+                <option value="IMG_2008_C">2008</option>
+                <option value="IMG_2002_C">2002</option>
+                <option value="IMG_2001_C">2001</option>
+                <option value="IMG_1995_97_CIR">1995-97 CIR</option>
+                <option value="IMG_1992_BW">1992</option>
+                <option value="IMG_1985_BW">1985</option>
+                <option value="IMG_1978_BW">1978</option>
+                <option value="IMG_1969_BW">1969</option>
+                <option value="IMG_1958_BW">1958</option>
+                <option value="IMG_1930_BW">1930</option>
+              </select>
+            </div>
+            <div id="search" class="search"></div>
+          </div>
+  </div>
   <div id="map" class="map">
-    <button id='brad' type='button'>b rad is rad</button>
     <div id="swipeDiv"></div>
   </div>
+  <!-- scripts -->
+  <script src="//js.arcgis.com/3.10/"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

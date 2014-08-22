@@ -72,9 +72,8 @@ require([
 
   
     $(document).ready(function() {
-      $('#brad').on('click', function() {
-        setScope('IMG_1930_BW');
-
+      $('#layerSelect').on('change', function() {
+        setScope(this.value);
       });
     });
 
