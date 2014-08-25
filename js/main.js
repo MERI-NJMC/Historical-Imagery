@@ -9,8 +9,14 @@ require([
   "dojo/query",
   "dojo/dom-style",
   "dijit/_WidgetBase",
+  "esri/dijit/LocateButton", 
+  "esri/dijit/Geocoder",
+  "esri/graphic", 
+  "esri/symbols/SimpleMarkerSymbol",
+  "esri/geometry/screenUtils",
+  "dojo/_base/Color",
   "dojo/domReady!"
-], function (Map, LayerSwipe, arcgisUtils, array, Layer, on, dom, query, domStyle,_WidgetBase) {
+], function (Map,LayerSwipe, arcgisUtils, array, Layer, on, dom, query, domStyle,_WidgetBase,LocateButton,Geocoder, Graphic, SimpleMarkerSymbol, screenUtils, Color) {
 
   var swipeWidget;
 
@@ -58,6 +64,7 @@ require([
           }
         
         
+        //layer wipe widget
         var swipeWidget = new LayerSwipe({
             type: "scope",  //Try switching to "scope" or "horizontal"
             map: map,
@@ -65,6 +72,43 @@ require([
           }, "swipeDiv");
         swipeWidget.startup();
         console.log(swipeWidget);
+
+        //toggles the view of the comparison on toolbar button click.
+        on(dom.byId('scopebtn'), 'click', function(evt) {
+          swipeWidget.set("type","scope");
+        });
+
+        on(dom.byId('sliderbtn'), 'click', function(evt) {
+          swipeWidget.set("type","vertical");
+        });
+
+        //geolacte gos button
+        var geoLocate = new LocateButton({
+          map: map,
+        }, "LocateButton");
+        
+        //search box
+        var geocoder = new Geocoder({
+          arcgisGeocoder: {
+            placeholder: "Type Street Address",
+            sourceCountry: "USA"
+          },
+          map: map,
+          autoComplete: true,
+            }, "search");
+        //triggers show location when a address is searched
+        geocoder.on("select", showLocation);
+
+        //puts a marker on the address searched for
+        function showLocation(evt) {
+          map.graphics.clear();
+          var point = evt.result.feature.geometry;
+          var symbol = new SimpleMarkerSymbol()
+          .setStyle("square")
+          .setColor(new Color([255,0,0,0.5]));
+          var graphic = new Graphic(point, symbol);
+          map.graphics.add(graphic);
+        }
         
       }
 
@@ -75,6 +119,14 @@ require([
       $('#layerSelect').on('change', function() {
         setScope(this.value);
       });
+
+      // $('#scopebtn').on('click', function() {
+      //   swipeWidget.set('type','scope');
+      // });
+
+      // $('#sliderbtn').on('click', function() {
+      //   swipeWidget.set('type','slider');
+      // });
     });
 
   });

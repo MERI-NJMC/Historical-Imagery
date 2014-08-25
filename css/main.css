@@ -3,6 +3,16 @@ html, body, #map {
   margin:0;
   height:100%;
 }
+
+#chp {
+	z-index: 100;
+}
+
+.esriControlsRB {
+	display: none;
+}
+
+
 #layerSCon {
 	float: left;
 	margin-top: 8px;
@@ -14,6 +24,7 @@ html, body, #map {
 	height: 50px;
 	float: left;
 	margin-top: -3px;
+	margin-right: 5px;
 }
 
 #logoFont {
@@ -21,7 +32,6 @@ html, body, #map {
 	margin-top: 7px;
 	font-family: helvetica, sans-serif;
 	font-size: 24px;
-	color: #3c557d;
 	float: left;
 }
 
@@ -29,8 +39,7 @@ html, body, #map {
 	height: 100%;
 	left: 0;
 	width: 100%;
-	position: fixed;
-	top: 50px;
+	position: absolute;
 	overflow: hidden;
 }
 
@@ -45,20 +54,61 @@ html, body, #map {
 	padding-left: 30px;
 	padding-right: 30px;
 }
+#search {
+	display: block;
+	margin-top: 10px;
+	margin-right: 5px;
+	z-index: 2;
+	float: left;
+}
 
+#viewTog {
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+}
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { 
+#toolbar {
+	float: right;
+	right: 60px;
+	position: absolute;
+}
+
+#toolhead {
+	font-family: helvetica, sans-serif;
+	font-size: 22px;
+}
+
+.zoomLocateButton {
+	position: absolute;
+	top: 95px;
+	left: 20px;
+	z-index: 2;
+	background-image: url('img/locate.png');
+	border-radius: 0;
+}
+
+@media only screen and (max-width: 600px) { 
 	
-	#muniCon {
-		display: none;
+	.esriSimpleSlider {
+		z-index: 0;
+	}
+
+	#logoFont {
+		font-size: 22px;
 	}
 	
+	#logo {
+		display: none;
+	}
+
+	.zoomLocateButton { 
+		right: 20px;
+		top: 20px;
+	}
 	
 }
 
-@media all and (orientation : portrait) {
-	#search {
-		margin-top: 23px;
-		margin-right: 35px;
-	}
-}	
+@media only screen and (max-device-width : 600px) {
+	
+}
