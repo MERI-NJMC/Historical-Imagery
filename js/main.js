@@ -119,14 +119,6 @@ require([
       $('#layerSelect').on('change', function() {
         setScope(this.value);
       });
-
-      // $('#scopebtn').on('click', function() {
-      //   swipeWidget.set('type','scope');
-      // });
-
-      // $('#sliderbtn').on('click', function() {
-      //   swipeWidget.set('type','slider');
-      // });
     });
 
   });
