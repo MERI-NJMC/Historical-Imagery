@@ -8,6 +8,12 @@ html, body, #map {
 	z-index: 100;
 }
 
+#disclaimer {
+	width: 100%;
+	float: right;
+	margin-top: 10px;
+}
+
 .esriControlsRB {
 	display: none;
 }
@@ -80,6 +86,7 @@ html, body, #map {
 	font-size: 22px;
 }
 
+
 .zoomLocateButton {
 	position: absolute;
 	top: 95px;
@@ -89,44 +96,48 @@ html, body, #map {
 	border-radius: 0;
 }
 
-/*@media only screen and (max-width: 600px) { 
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { 
+
+	.esriControlsBR {
+		z-index: -1;
+	}
 	
+	#logo {
+		display: none;
+	}
+	
+	#logoFont {
+		font-size: 18px;
+	}
+
 	.esriSimpleSlider {
 		z-index: 0;
 	}
-
-	#logoFont {
-		font-size: 22px;
+	
+	#slidePanel {
+		z-index: 31;
+		position: relative;
+		height: 100%;
+		float: left;
 	}
 	
-	#logo {
-		display: none;
+	#slidePan {
+		padding: 0px;
+		margin-top: 0px;
 	}
 
-	.zoomLocateButton { 
-		right: 20px;
-		top: 20px;
-	}
-	
-}
-
-@media only screen and (max-device-width : 600px) {
-	
-}*/
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { 
-	
-	.esriControlsBR {
-		z-index: -1px;
+	#spConBack {
+		background-color: white;
+		z-index: 31;
+		position: absolute;
+		height: 100%;
+		float: left;
 	}
 
-	#logo {
-		display: none;
-	}
-	
 	.zoomLocateButton {
-		top: 20px;
-		right: 15px;
+		top: 21px;
+		margin-left: 80%;
+
 	}
 		
 }

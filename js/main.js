@@ -116,9 +116,17 @@ require([
 
   
     $(document).ready(function() {
+      
+      //calls the setscope function to change the scope or swipers layer
       $('#layerSelect').on('change', function() {
         setScope(this.value);
       });
+
+      //when the zoom slider loads it sets its z-index to 0
+      $('#map_zoom_slider').ready(function () {
+        $('#map_zoom_slider').css("z-index",0);
+      });
+
     });
 
   });
