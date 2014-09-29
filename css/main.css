@@ -162,3 +162,18 @@ html, body, #map {
 	}
 		
 }
+
+@media only screen and (max-width: 720px) { 
+
+	#logoFont {
+		font-size: 16px;
+	}
+
+	.simpleGeocoder .esriGeocoderContainer {
+		width: 205px;
+	}
+
+	#layerSelect {
+		margin-left: 45%;
+	}
+}
