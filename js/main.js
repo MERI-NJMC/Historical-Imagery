@@ -74,12 +74,13 @@ require([
         console.log(swipeWidget);
 
         //toggles the view of the comparison on toolbar button click.
-        on(dom.byId('scopebtn'), 'click', function(evt) {
-          swipeWidget.set("type","scope");
-        });
-
-        on(dom.byId('sliderbtn'), 'click', function(evt) {
-          swipeWidget.set("type","vertical");
+        on(dom.byId('scopeSelect'), 'change', function(evt) {
+          if(evt.srcElement.value == 'Slider') {
+            swipeWidget.set("type","vertical");
+          } else {
+            swipeWidget.set("type","scope");
+          }
+          
         });
 
         //geolacte gos button

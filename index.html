@@ -6,62 +6,48 @@
   <title>NJMC Historical Imagery</title>
   <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="bower_components/platform/platform.js"></script>
-  <link rel="import" href="bower_components/core-elements/core-elements.html">
-  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="stylesheet" href="css/main.css"> 
 
 
 </head>
 <body>
-  <core-scaffold>
-    <core-header-panel id="chp" style='float : right'  navigation flex mode="seamed">
-      <core-toolbar id="titlebar"><span id='toolhead'>Toolbar</span></core-toolbar>
-      <core-menu id="slidePan" theme="core-light-theme">
-    
+  
+  <div id="navbar">
+    <img id="logo" src="css/img/logo.png" alt="">
+    <div id="logoFont">NJMC Historical Imagery Viewer</div>
 
-        <div id="spConBack">
-        <div id='search' class='search'></div><br><br>
-        <div id="layerSCon">
-          <label for="layerSelect">Scope/Slider Layer </label><br>
-          <select name="layerSelect" id="layerSelect" class="form-control">
-            <option value="IMG_2012_C">2012</option>
-            <option value="IMG_2010_C">2010</option>
-            <option value="IMG_2009_C">2009</option>
-            <option value="IMG_2008_C">2008</option>
-            <option value="IMG_2002_C">2002</option>
-            <option value="IMG_2001_C">2001</option>
-            <option value="IMG_1995_97_CIR">1995-97 CIR</option>
-            <option value="IMG_1992_BW">1992</option>
-            <option value="IMG_1985_BW">1985</option>
-            <option value="IMG_1978_BW">1978</option>
-            <option value="IMG_1969_BW">1969</option>
-            <option value="IMG_1958_BW">1958</option>
-            <option value="IMG_1930_BW">1930</option>
-          </select>
-        </div>
-        <div id="viewTog">
-          <label for="">View Toggle</label><br>
-          <button id="scopebtn" class="btn btn-lg btn-outline" role="button">Scope</button>
-          <button id="sliderbtn" class="btn btn-lg btn-outline" role="button">Slider</button>
-        </div>
-        <div id="disclaimer">*Basemap is provided by ESRI and was last updated July of 2014.</div>
-        </div>
+  </div>
+  <div id="map" class="map">
+    <div id='search' class='search'></div>
+    <div id="LocateButton"></div>
 
-      </core-menu>
-    </core-header-panel>
-    <div tool>
-      <img id="logo" src="css/img/logo.png" alt="">
-      <div id="logoFont">NJMC Historical Imagery Viewer</div>
+     <select name="layerSelect" id="layerSelect" class="form-control">
+      <option value="IMG_2012_C">2012</option>
+      <option value="IMG_2010_C">2010</option>
+      <option value="IMG_2009_C">2009</option>
+      <option value="IMG_2008_C">2008</option>
+      <option value="IMG_2002_C">2002</option>
+      <option value="IMG_2001_C">2001</option>
+      <option value="IMG_1995_97_CIR">1995-97 CIR</option>
+      <option value="IMG_1992_BW">1992</option>
+      <option value="IMG_1985_BW">1985</option>
+      <option value="IMG_1978_BW">1978</option>
+      <option value="IMG_1969_BW">1969</option>
+      <option value="IMG_1958_BW">1958</option>
+      <option value="IMG_1930_BW">1930</option>
+    </select>
+
+    <div id="viewTog">
+      <select name="scopeSelect" id="scopeSelect" class="form-control">
+        <option value="Scope">Scope</option>
+        <option value="Slider">Slider</option>
+      </select>
     </div>
-    <div id="map" class="map">
-      <div id="LocateButton"></div>
-      <div id="swipeDiv"></div>
-    </div>
-  </core-scaffold>
+
+
+    <div id="swipeDiv"></div>
+  </div>
+  
 
   <!-- scripts -->
   <script src="//js.arcgis.com/3.10/"></script>

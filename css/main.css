@@ -8,36 +8,33 @@ html, body, #map {
 	z-index: 100;
 }
 
-#disclaimer {
-	width: 100%;
-	float: right;
-	margin-top: 10px;
-}
-
 .esriControlsRB {
 	display: none;
 }
 
 
-#layerSCon {
-	float: left;
-	margin-top: 8px;
-	margin-right: 10px;
+#layerSelect {
+	float: right;
+	margin-top: 60px;
+	margin-left: 181px;
+	width: 130px;
+	position: absolute;
+	z-index: 2;
 }
 
 #logo {
 	width: 50px;
 	height: 50px;
 	float: left;
-	margin-top: -3px;
-	margin-right: 5px;
+	margin-top: -1px;
 }
 
 #logoFont {
-	margin-left: 5px;
-	margin-top: 7px;
+	margin-left: 10px;
+	margin-top: 10px;
 	font-family: helvetica, sans-serif;
 	font-size: 24px;
+	color: white;
 	float: left;
 }
 
@@ -45,33 +42,39 @@ html, body, #map {
 	height: 100%;
 	left: 0;
 	width: 100%;
-	position: absolute;
+	position: fixed;
+	top: 50px;
 	overflow: hidden;
 }
 
-#navBar {
-	width: 100%;
+#navbar {
+	width: 100%; 
 	height: 50px;
 	z-index: 2;
-	background-color: #f4f6f9;
-	position: absolute;
+	background-color: #3c557d;
+	position: fixed;
 	float: left;
 	margin-bottom: 10px;
 	padding-left: 30px;
 	padding-right: 30px;
 }
+
 #search {
 	display: block;
-	margin-top: 10px;
-	margin-right: 5px;
+	margin-top: 20px;
+	margin-left: 85px;
 	z-index: 2;
 	float: left;
+	position: absolute;
 }
 
 #viewTog {
-	width: 100%;
-	float: left;
-	margin-top: 10px;
+	
+	float: right;
+	margin-top: 60px;
+	margin-left: 85px;
+	position: absolute;
+	z-index: 2;
 }
 
 
@@ -96,16 +99,16 @@ html, body, #map {
 	border-radius: 0;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { 
+@media only screen and (max-width: 1080px) { 
 
 	.esriControlsBR {
 		z-index: -1;
 	}
 	
-	#logo {
-		display: none;
+	#layerSelect {
+		margin-left: 161px;
 	}
-	
+
 	#logoFont {
 		font-size: 18px;
 	}
@@ -113,7 +116,20 @@ html, body, #map {
 	.esriSimpleSlider {
 		z-index: 0;
 	}
+
+	#layerSelect {
+		position: absolute;
+	}
 	
+	#navbar {
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	#search {
+		margin-left: 65px;
+	}
+
 	#slidePanel {
 		z-index: 31;
 		position: relative;
@@ -132,6 +148,11 @@ html, body, #map {
 		position: absolute;
 		height: 100%;
 		float: left;
+	}
+
+	#viewTog {
+		position: absolute;
+		margin-left: 65px;
 	}
 
 	.zoomLocateButton {
