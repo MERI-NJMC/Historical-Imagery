@@ -75,7 +75,8 @@ require([
 
         //toggles the view of the comparison on toolbar button click.
         on(dom.byId('scopeSelect'), 'change', function(evt) {
-          if(evt.srcElement.value == 'Slider') {
+          console.log(evt);
+          if(evt.target.value == 'Slider') {
             swipeWidget.set("type","vertical");
           } else {
             swipeWidget.set("type","scope");
@@ -119,9 +120,9 @@ require([
     $(document).ready(function() {
       
       //calls the setscope function to change the scope or swipers layer
-      $('#layerSelect').on('change', function() {
-        setScope(this.value);
-      });
+      // $('#layerSelect').on('change', function() {
+      //   setScope(this.value);
+      // });
 
       //when the zoom slider loads it sets its z-index to 0
       $('#map_zoom_slider').ready(function () {
